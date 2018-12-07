@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.16.4",
     "pi-servo-blaster.js": "0.0.3"
   }
 }
