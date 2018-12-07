@@ -8,7 +8,7 @@ var curAngle = 0;
 var direction = 1;
 setInterval(() => {
   piblaster.setServoPwm("P1-11", angleToPercent(curAngle) + "%");
-  piblaster.setServoPwm("P1-12", angleToPercent(360-curAngle) + "%");
+  piblaster.setServoPwm("P1-12", angleToPercent(180-curAngle) + "%");
   console.log("Settinge at: ", curAngle, angleToPercent(curAngle));
   curAngle += direction;
   // Change direction when it exceeds the max angle.
