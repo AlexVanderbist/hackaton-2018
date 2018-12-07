@@ -3,8 +3,8 @@ const piblaster = require('pi-servo-blaster.js');
 const angleToPercent = angle => Math.floor((angle/180) * 100);
 
 //test
-piblaster.setServoPwm("P1-11", angleToPercent(90) + "%");
-piblaster.setServoPwm("P1-12", angleToPercent(90) + "%");
+// piblaster.setServoPwm("P1-11", angleToPercent(90) + "%");
+piblaster.setServoPwm("P1-12", angleToPercent(0) + "%");
 
 // piblaster.setServoPwm("P1-11", angleToPercent(90) + "%");
 // piblaster.setServoPwm("P1-12", angleToPercent(90) + "%");
