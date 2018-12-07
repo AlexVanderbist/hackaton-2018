@@ -5,13 +5,13 @@ const angleToPercent = angle => Math.floor((angle/180) * 100);
 piblaster.setServoPwm("P1-11", angleToPercent(90) + "%");
 piblaster.setServoPwm("P1-12", angleToPercent(90) + "%");
 
-piblaster.setServoPwm("P1-11", angleToPercent(0) + "%");
-piblaster.setServoPwm("P1-12", angleToPercent(180) + "%");
+// piblaster.setServoPwm("P1-11", angleToPercent(0) + "%");
+// piblaster.setServoPwm("P1-12", angleToPercent(180) + "%");
 
-setTimeout(() => {
-  piblaster.setServoPwm("P1-11", angleToPercent(90) + "%");
-  piblaster.setServoPwm("P1-12", angleToPercent(90) + "%");
-}, 900);
+// setTimeout(() => {
+//   piblaster.setServoPwm("P1-11", angleToPercent(90) + "%");
+//   piblaster.setServoPwm("P1-12", angleToPercent(90) + "%");
+// }, 900);
 
 // var curAngle = 90;
 // var direction = 1;
