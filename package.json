@@ -1,0 +1,14 @@
+{
+  "name": "hackaton-2018",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pi-servo-blaster.js": "0.0.3"
+  }
+}
