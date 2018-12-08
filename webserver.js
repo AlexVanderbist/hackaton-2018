@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
-
+const cors = require('cors');
 const { left, right, shoot } = require("./kek");
+
+app.use(cors());
 
 app.get('/left', function (req, res) {
 
