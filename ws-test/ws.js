@@ -68,7 +68,8 @@ function setupWebcam() {
             }
 
             WSS.broadcast(data);
-            setTimeout(capture, 500);
+            console.log('kek');
+            setTimeout(capture, 25);
         });
     }
     capture();
