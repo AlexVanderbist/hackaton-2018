@@ -31,9 +31,10 @@ WSS.broadcast = function broadcast( data ) {
 
 };
 
-var NodeWebcam = require( "./../../" );
+var NodeWebcam = require('node-webcam');
 
-var Webcam = NodeWebcam.create({
+var FSWebcam = NodeWebcam.FSWebcam;
+var Webcam = new FSWebcam({
     callbackReturn: "base64",
     saveShots: false
 });
