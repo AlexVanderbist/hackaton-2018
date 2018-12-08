@@ -1,9 +1,17 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const path = require('path')
+
 const { left, right, shoot } = require("./kek");
 
 app.use(cors());
+
+app.use(express.static(path.join(__dirname, 'react/build')));
+
+app.get('*', (req,res) =>{
+  res.sendFile(path.join(__dirname+'/react/build/index.html'));
+});
 
 app.get('/left', function (req, res) {
 
