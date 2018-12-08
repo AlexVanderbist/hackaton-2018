@@ -23,12 +23,12 @@ WSS.broadcast = function broadcast(data) {
     });
 };
 
-var opts = {
+/* var opts = {
     width: 1280,
     height: 720,
     quality: 100,
     delay: 0,
-    saveShots: false,
+    saveShots: true,
     output: "jpeg",
     device: false,
     verbose: true,
@@ -36,11 +36,14 @@ var opts = {
     // [location, buffer, base64]
     // Webcam.CallbackReturnTypes
     callbackReturn: "base64",
-};
+}; */
 
 var NodeWebcam = require('node-webcam');
 var FSWebcam = NodeWebcam.FSWebcam;
-var Webcam = new FSWebcam(opts);
+var Webcam = new FSWebcam({
+    callbackReturn: "base64",
+    saveShots: false
+});
 
 // Main
 init();
