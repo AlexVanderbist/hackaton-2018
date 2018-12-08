@@ -5,14 +5,14 @@ const { left, right, shoot } = require("./kek");
 
 app.get('/left', function (req, res) {
 
-  console.log(left());
-  res.send('OK');
+  const response = left();
+  res.send(response);
 });
 
 app.get('/right', function (req, res) {
 
-  console.log(right());
-  res.send('OK');
+  const response = right();
+  res.send(response);
 });
 
 app.get('/shoot-that-mofo', function (req, res) {

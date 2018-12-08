@@ -4,32 +4,37 @@ let currentAngle = 0;
 
 const move = amount => {
     let newAngle = currentAngle + amount;
+    let response = 'OK';
 
     if (newAngle > 180) {
         newAngle = 180;
+        response = 'MAX LEFT';
     }
 
     if (newAngle < 0) {
         newAngle = 0;
+        response = 'MAX RIGHT';
     }
 
     currentAngle = newAngle;
 
     piblaster.setServoPwm("P1-13", angleToPercent(currentAngle) + "%");
     console.log("Setting at: ", currentAngle, angleToPercent(currentAngle));
+
+    return response;
 };
 
 return (module.exports = {
     left() {
         move(10);
 
-        return 'OK LEFT';
+        //return 'OK LEFT';
     },
 
     right() {
         move(-10);
 
-        return 'OK RIGHT';
+        //return 'OK RIGHT';
     },
 
     shoot() {
