@@ -17,9 +17,9 @@ var WSS = new WS.Server({ port: 9091 });
 // Broadcast to all.
 WSS.broadcast = function broadcast(data) {
     WSS.clients.forEach(function each(client) {
-        if (client.readyState === WebSocket.OPEN) {
+        /* if (client.readyState === WS.OPEN) { */
             client.send(data);
-        }
+        /* } */
     });
 };
 
