@@ -8,12 +8,14 @@ app.use(cors());
 app.get('/left', function (req, res) {
 
   const response = left();
+  console.log(response);
   res.send(response);
 });
 
 app.get('/right', function (req, res) {
 
   const response = right();
+  console.log(response);
   res.send(response);
 });
 

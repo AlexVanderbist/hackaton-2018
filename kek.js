@@ -19,7 +19,7 @@ const move = amount => {
     currentAngle = newAngle;
 
     piblaster.setServoPwm("P1-13", angleToPercent(currentAngle) + "%");
-    console.log("Setting at: ", currentAngle, angleToPercent(currentAngle));
+    /* console.log("Setting at: ", currentAngle, angleToPercent(currentAngle)); */
 
     return response;
 };
