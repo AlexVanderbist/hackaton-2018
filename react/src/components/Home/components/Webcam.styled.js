@@ -7,7 +7,8 @@ export const Wrap = styled.div`
 `;
 
 export const WebcamWrap = styled.div`
-   border:5px solid #ccc;
+  overflow: hidden;
+  border:5px solid #ccc;
   position: absolute;
   left: 50%;
   top:-50px;

@@ -6,7 +6,7 @@ export default class Webcam extends PureComponent {
     return (
       <Wrap>
        <WebcamWrap>
-         {children}
+        <img src="http://192.168.47.149:8081/" alt="webcam stream" />
        </WebcamWrap>
       </Wrap>
     )
