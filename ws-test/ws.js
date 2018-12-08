@@ -71,7 +71,7 @@ function setupWebcam() {
             }
 
             WSS.broadcast( data );
-            setTimeout( capture, 500 );
+            setTimeout( capture, 3000 );
         });
     }
     capture();
