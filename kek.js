@@ -1,6 +1,7 @@
 const piblaster = require('pi-servo-blaster.js');
 const angleToPercent = angle => Math.floor((angle / 180) * 100);
 let currentAngle = 0;
+var Sound = require('aplay');
 
 const move = amount => {
     let newAngle = currentAngle + amount;
@@ -38,6 +39,8 @@ return (module.exports = {
     },
 
     shoot() {
+        new Sound().play('voice1.wav');
+
         piblaster.setServoPwm("P1-11", angleToPercent(180) + "%");
         piblaster.setServoPwm("P1-12", angleToPercent(90) + "%");
 
