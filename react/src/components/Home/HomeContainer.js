@@ -10,19 +10,20 @@ export default class HomContainer extends PureComponent {
   }
   getApiAction = (path) => {
     axios({
-      method:'get',
+      method:'post',
+      data: {},
       url:`${API_BASE}${path}`,
     })
       .then((response) =>  {
         if(response && response.data) {
           switch (response.data) {
-            case 'MAX RIGHT': 
+            case 'MAX RIGHT':
               this.setState({actionBusy: 'right'})
               break;
-            case 'MAX LEFT': 
+            case 'MAX LEFT':
               this.setState({actionBusy: 'left'})
               break;
-            default: 
+            default:
               break;
           }
         }
@@ -40,12 +41,12 @@ export default class HomContainer extends PureComponent {
       await this.getApiAction('right');
       this.setState({actionBusy: null});
         break;
-      case 'shoot': 
+      case 'shoot':
       await this.setState({actionBusy: 'shoot'});
       this.getApiAction('shoot-that-mofo');
       this.setState({actionBusy: null});
-        break; 
-      default : 
+        break;
+      default :
         return null;
     }
   }
