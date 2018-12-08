@@ -24,8 +24,8 @@ WSS.broadcast = function broadcast(data) {
 };
 
 var opts = {
-    width: 1280,
-    height: 720,
+    width: 352,
+    height: 288,
     quality: 50,
     delay: 0,
     saveShots: false,
