@@ -1,7 +1,5 @@
 var NodeWebcam = require( "node-webcam" );
 
-var FSWebcam = NodeWebcam.FSWebcam;
-
 var opts = {
     width: 1280,
     height: 720,
@@ -17,8 +15,10 @@ var opts = {
     callbackReturn: "location",
 };
 
-var Webcam = FSWebcam.create( opts );
-Webcam.capture("test_picture", function( err, data ) {
+var FSWebcam = NodeWebcam.FSWebcam;
+var cam = new FSWebcam(opts);
+
+cam.capture("test_picture", function( err, data ) {
     console.log(err, data);
 } );
 
