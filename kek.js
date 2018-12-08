@@ -21,13 +21,13 @@ const move = amount => {
 
 return (module.exports = {
     left() {
-        move(-10);
+        move(10);
 
         return 'OK LEFT';
     },
 
     right() {
-        move(10);
+        move(-10);
 
         return 'OK RIGHT';
     },
