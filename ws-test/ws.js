@@ -23,27 +23,24 @@ WSS.broadcast = function broadcast(data) {
     });
 };
 
-/* var opts = {
+var opts = {
     width: 1280,
     height: 720,
-    quality: 100,
+    quality: 50,
     delay: 0,
-    saveShots: true,
+    saveShots: false,
     output: "jpeg",
     device: false,
-    verbose: true,
+    verbose: false,
 
     // [location, buffer, base64]
     // Webcam.CallbackReturnTypes
     callbackReturn: "base64",
-}; */
+};
 
 var NodeWebcam = require('node-webcam');
 var FSWebcam = NodeWebcam.FSWebcam;
-var Webcam = new FSWebcam({
-    callbackReturn: "base64",
-    saveShots: false
-});
+var Webcam = new FSWebcam(opts);
 
 // Main
 init();
@@ -51,27 +48,27 @@ init();
 function init() {
     setupHTTP();
     setupWebcam();
-    console.log( "Visit localhost:9090" );
+    console.log("Visit localhost:9090");
 }
 
 function setupHTTP() {
     var server = HTTP.createServer();
-    server.on( "request", function( request, response ) {
-        response.write( HTML_CONTENT );
+    server.on("request", function(request, response) {
+        response.write(HTML_CONTENT);
         response.end();
     });
-    server.listen( port );
+    server.listen(port);
 }
 
 function setupWebcam() {
     function capture() {
         Webcam.capture( "picture", function( err, data ) {
-            if( err ) {
+            if(err) {
                 throw err;
             }
 
-            WSS.broadcast( data );
-            setTimeout( capture, 7500 );
+            WSS.broadcast(data);
+            setTimeout(capture, 25);
         });
     }
     capture();
