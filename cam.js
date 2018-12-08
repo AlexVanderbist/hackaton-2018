@@ -1,18 +1,18 @@
 var NodeWebcam = require( "node-webcam" );
 
 var opts = {
-    width: 1280,
-    height: 720,
-    quality: 100,
+    width: 640,
+    height: 480,
+    quality: 50,
     delay: 0,
-    saveShots: true,
+    saveShots: false,
     output: "jpeg",
     device: false,
     verbose: true,
 
     // [location, buffer, base64]
     // Webcam.CallbackReturnTypes
-    callbackReturn: "location",
+    callbackReturn: "base64",
 };
 
 var FSWebcam = NodeWebcam.FSWebcam;
