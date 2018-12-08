@@ -3,9 +3,9 @@ var NodeWebcam = require( "node-webcam" );
 var opts = {
     width: 1280,
     height: 720,
-    quality: 50,
+    quality: 100,
     delay: 0,
-    saveShots: false,
+    saveShots: true,
     output: "jpeg",
     device: false,
     verbose: true,
